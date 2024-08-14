@@ -42,6 +42,9 @@ utils_trainer.py            # record training dynamics 4 RecBole API
 ![](imgs/abla1.jpg)
 <p align=center> Ablation study compare single model vs ensemble vs ours.</p>
 
+![](imgs/data.jpg)
+<p align=center> Dataset statistics.</p>
+
 Reference:
 - https://github.com/adymaharana/d2pruning
 - Mixture of Link Predictors
