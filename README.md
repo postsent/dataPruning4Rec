@@ -7,7 +7,16 @@ Motivation:
 2. MoE leverages the strength of different models
 3. A healthy coverage on both easy and hard samples is important, and so we can use e.g. graph based sampling algorithm
    
+![](imgs/overview.jpg)
 
+<center>Three stages in data pruning: model training, scoring and post sampling.</center>
+
+</br>
+</br>
+
+![](imgs/recsample_pipeline.jpg)
+
+<center>Our pipeline in sampling divese high quality recommendation data.</center>
 
 Steps:
 1. Train base models (RNN, GNN, transformer, RNN + attention) with RecBole and record training dynamic e.g. training loss
@@ -23,14 +32,3 @@ utils files are used to modify upon the original RecBole package e.g. track trai
 Reference:
 - https://github.com/adymaharana/d2pruning
 - Mixture of Link Predictors
-
-![](imgs/overview.jpg)
-
-<center>Three stages in data pruning: model training, scoring and post sampling.</center>
-
-</br>
-</br>
-
-![](imgs/recsample_pipeline.jpg)
-
-<center>Our pipeline in sampling divese high quality recommendation data.</center>
