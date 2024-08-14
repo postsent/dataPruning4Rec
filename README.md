@@ -14,6 +14,7 @@ Steps:
 2. (Baseline algorithms) Given training dynamics, get the average data importance score e.g. EL2N
 3. Traing a gating model with the base models (MoE), tune parameters 1) k experts selected 2) coefficient for load balance loss (if without, then some expert will not be used at all, we want cross architecture generalizability i.e. take advantage of each model strength)
 4. Apply data pruning algorithms e.g. CCS based on the score
+5. Retrain base models on the selected data subset and record performance
 
 
 
@@ -22,3 +23,14 @@ utils files are used to modify upon the original RecBole package e.g. track trai
 Reference:
 - https://github.com/adymaharana/d2pruning
 - Mixture of Link Predictors
+
+![](imgs/overview.jpg)
+
+<center>Three stages in data pruning: model training, scoring and post sampling.</center>
+
+</br>
+</br>
+
+![](imgs/recsample_pipeline.jpg)
+
+<center>Our pipeline in sampling divese high quality recommendation data.</center>
