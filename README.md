@@ -9,14 +9,14 @@ Motivation:
    
 ![](imgs/overview.jpg)
 
-<center>Three stages in data pruning: model training, scoring and post sampling.</center>
+<p align=center> Three stages in data pruning: model training, scoring and post sampling.</p>
 
 </br>
 </br>
 
 ![](imgs/recsample_pipeline.jpg)
 
-<center>Our pipeline in sampling divese high quality recommendation data.</center>
+<p align=center> Our pipeline in sampling divese high quality recommendation data.</p>
 
 Steps:
 1. Train base models (RNN, GNN, transformer, RNN + attention) with RecBole and record training dynamic e.g. training loss
