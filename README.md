@@ -35,6 +35,13 @@ utils_seq.py                # process RecBole Dataset
 utils_trainer.py            # record training dynamics 4 RecBole API
 ```
 
+
+![](imgs/main.jpg)
+<p align=center> Main table. Compare to e.g. EL2N, ours does not needs to store the training dynamics.</p>
+
+![](imgs/abla1.jpg)
+<p align=center> Ablation study compare single model vs ensemble vs ours.</p>
+
 Reference:
 - https://github.com/adymaharana/d2pruning
 - Mixture of Link Predictors
