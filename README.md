@@ -25,9 +25,15 @@ Steps:
 4. Apply data pruning algorithms e.g. CCS based on the score
 5. Retrain base models on the selected data subset and record performance
 
-
-
-utils files are used to modify upon the original RecBole package e.g. track training dynamics
+```
+get_importance_score.py
+main.py
+moe.py                      # moe architecture
+run.py                      # experiments with different params
+selection_mp.py             # data pruning algo
+utils_seq.py                # process RecBole Dataset
+utils_trainer.py            # record training dynamics 4 RecBole API
+```
 
 Reference:
 - https://github.com/adymaharana/d2pruning
