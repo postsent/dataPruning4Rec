@@ -1,0 +1,30 @@
+# configurations initialization:https://github.com/RUCAIBox/RecBole-GNN/blob/main/results/sequential/diginetica.md
+gpu_id: 0
+seed: 2020 # default: 2020
+
+stopping_step: 3
+train_batch_size: 2048 # 2048
+eval_batch_size: 1024
+epochs: 100                                       # 10 for digi(5) & yoo(8)
+
+
+benchmark_filename: [train, valid, test] # we prune only train data
+USER_ID_FIELD: session_id
+alias_of_item_id: [item_id_list]
+load_col:
+  inter: [session_id, item_id_list, item_id]
+
+topk: [20]
+metrics: [Recall, MRR]
+valid_metric:  MRR@20 # The evaluation metric for early stopping. It must be one of used metrics
+
+eval_args:
+  order: TO
+  split:
+    RS: [0.8, 0.1, 0.1]                         # SRGNN use all train data when retraining
+
+# user_inter_num_interval: "[5,inf)"
+# item_inter_num_interval: "[5,inf)"
+train_neg_sample_args: ~
+
+# worker: 8

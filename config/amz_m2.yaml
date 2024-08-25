@@ -1,0 +1,31 @@
+# emb_size = 64, not shuffle, recall@100 : 0.2868    mrr@100 : 0.1495
+# 128,  shuffle, recall@100 : 0.3483    mrr@100 : 0.1894
+# 64,  shuffle, recall@100', 0.3042), ('mrr@100', 0.1662
+# 64, step=2, shuffle=1, recall@100 : 0.285    mrr@100 : 0.1454
+
+gpu_id: 0
+benchmark_filename: [train, valid, test] # we prune only train data
+USER_ID_FIELD: session_id
+alias_of_item_id: [item_id_list]
+load_col:
+  inter: [session_id, item_id_list, item_id]
+
+topk: [100]
+metrics: [Recall, MRR]
+valid_metric:  MRR@100 # The evaluation metric for early stopping. It must be one of used metrics
+stopping_step: 3
+eval_args:
+  order: TO
+  split:
+    RS: [0.8, 0.1, 0.1]                         # SRGNN use all train data when retraining
+
+train_batch_size: 512 # 1028
+eval_batch_size: 512
+
+epochs: 100                   # 10 for digi(5) & yoo(8)
+# user_inter_num_interval: "[5,inf)"
+# item_inter_num_interval: "[5,inf)"
+train_neg_sample_args: ~
+
+# seed: 0
+# worker: 8
